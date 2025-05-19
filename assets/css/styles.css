@@ -13,6 +13,15 @@
     border: none;
 }
 
+body, html {
+    height: 100%;
+}
+
+body {
+    /* Remova ou comente esta linha para não aplicar o fundo globalmente */
+    /* background: url('../img/esp3.png') no-repeat center center/cover; */
+}
+
 div.container {
     height: 100vh;
     width: 100%;
@@ -159,8 +168,9 @@ section.main-content {
     width: calc(100vw - 250px);
     margin-left: 250px;
     min-height: 100vh;
-    background-color: #FAFAFA;
+    background: linear-gradient(to bottom right, #f0f4ff, #ffffff);
 }
+
 
 header.main-header {
     min-height: 100px;
@@ -194,14 +204,20 @@ header.main-header {
     cursor: pointer;
 }
 
-.btn-container input[type="button"]{
+.btn-container input[type="button"] {
+    background: linear-gradient(90deg, #609DF9, #4A90E2);
+    color: #fff;
     border: none;
     padding: 10px;
-    color: #fff;
-    background-color: #609DF9;
     font-weight: bold;
     cursor: pointer;
     border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s ease;
+}
+
+.btn-container input[type="button"]:hover {
+    background: linear-gradient(90deg, #4A90E2, #609DF9);
 }
 
 
@@ -252,6 +268,21 @@ section.cards-container{
 
 .card-item:last-child{
     border-bottom: none;
+}
+
+.card-item{
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .card-item h2{
@@ -381,7 +412,9 @@ div.hidden-menu{
  Login
 ===============*/
 section.main-login {
-    background-color: #609DF9;
+    background: url('../img/esp3.png') no-repeat center center/cover, linear-gradient(135deg, #609DF9 0%, #4A90E2 100%);
+    background-size: cover;
+    background-position: center;
     width: 100vw;
     height: 100vh;
     display: flex;
@@ -391,54 +424,82 @@ section.main-login {
 
 .container-login{
     background-color: #fff;
-    width: 350px;
-    min-height: 350px;
-    border-radius: 5px;
+    width: 370px;
+    min-height: 380px;
+    border-radius: 16px;
     display: flex;
-    flex-direction: row;
-    padding: 15px;
+    flex-direction: column;
+    padding: 32px 28px 24px 28px;
+    box-shadow: 0 8px 32px rgba(60, 120, 200, 0.15), 0 1.5px 4px rgba(0,0,0,0.05);
+    align-items: center;
+    transition: box-shadow 0.3s;
 }
 
-.container-login input[type="email"], .container-login input[type="password"], .container-login input[type="text"]{
-    padding-left: 10px;
-}
-
-.container-login input{
+.container-login input[type="email"], 
+.container-login input[type="password"], 
+.container-login input[type="text"]{
+    padding-left: 12px;
+    font-size: 15px;
+    background: #f7f9fc;
     border: 1px solid #e6e6e6;
+    border-radius: 6px;
+    margin: 12px 0 0 0;
+    height: 40px;
     width: 100%;
-    margin: 10px 0;
-    height: 35px;
-    border-radius: 3px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.container-login input:focus {
+    border-color: #609DF9;
+    box-shadow: 0 0 0 2px #e3edfc;
+    outline: none;
 }
 
 .container-login input::placeholder{
     color: #BABABA;
+    font-size: 14px;
 }
 
 .container-login input[type="submit"]{
     color: #fff;
-    background-color: #609DF9;
+    background: linear-gradient(90deg, #609DF9 60%, #4A90E2 100%);
     cursor: pointer;
     border: none;
+    border-radius: 6px;
+    margin-top: 22px;
+    height: 42px;
+    font-weight: bold;
+    font-size: 16px;
+    letter-spacing: 0.5px;
+    box-shadow: 0 2px 8px rgba(96,157,249,0.08);
+    transition: background 0.2s, box-shadow 0.2s;
+}
+
+.container-login input[type="submit"]:hover {
+    background: linear-gradient(90deg, #4A90E2 60%, #609DF9 100%);
+    box-shadow: 0 4px 16px rgba(96,157,249,0.13);
 }
 
 .container-p{
     display: flex;
-    margin-top: 60px;
+    margin-top: 40px;
     justify-content: flex-end;
     width: 100%;
 }
 
 .container-p p{
     font-size: 15px;
+    color: #747474;
 }
 
 .container-login p.kanban-title{
-    font-size: 35px;
+    font-size: 38px;
     color: #609DF9;
-    margin-bottom: 30px;
+    margin-bottom: 28px;
     font-weight: bold;
     text-align: center;
+    letter-spacing: 1px;
+    text-shadow: 0 2px 8px rgba(96,157,249,0.08);
 }
 
 .container-login form{
@@ -446,10 +507,8 @@ section.main-login {
     flex-direction: column;
     align-items: center;
     width: 100%;
-    /* text-align: center; */
 }
 
-/* registro */
 .container-login span{
     width: 100%;
     margin-top: 10px;
@@ -458,6 +517,20 @@ section.main-login {
 .container-login span label{
     font-size: 14px;
     font-weight: bold;
+    color: #4A90E2;
+}
+
+/* Responsividade aprimorada para login */
+@media screen and (max-width: 430px) {
+    .container-login{
+        width: 98vw;
+        min-width: unset;
+        padding: 18px 6vw 18px 6vw;
+    }
+    .container-login input,
+    .container-login input[type="submit"] {
+        width: 100%;
+    }
 }
 
 /*=============== 
@@ -501,4 +574,67 @@ section.main-login {
     .input-task input, .task-register textarea{
         width: 100%;
     }
+}
+
+/* Additional CSS */
+.main-login {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-content {
+    width: 400px;
+    padding: 32px;
+    border-radius: 16px;
+    background-color: rgba(0, 0, 0, 0.6);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+}
+
+.kanban-title {
+    font-size: 28px;
+    color: #ffffff;
+    margin-bottom: 24px;
+    font-weight: bold;
+    text-align: center;
+}
+
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 16px;
+    border: none;
+    border-radius: 6px;
+    background: #f7f9fc;
+    font-size: 14px;
+}
+
+input[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    background: linear-gradient(to right, #007bff, #00c6ff);
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background: linear-gradient(to right, #00c6ff, #007bff);
+}
+
+.container-p {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.container-p p {
+    font-size: 14px;
+    color: #ffffff;
 }
