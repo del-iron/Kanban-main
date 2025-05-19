@@ -420,6 +420,49 @@ section.main-login {
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative; /* Necessário para posicionamento absoluto do botão */
+}
+
+/* Botão cadastrar no topo direito */
+.container-p {
+    position: absolute;
+    top: 32px;
+    right: 40px;
+    margin: 0;
+    text-align: right;
+    display: block;
+    z-index: 2;
+}
+
+.container-p a {
+    text-decoration: none;
+}
+
+.container-p p {
+    font-size: 15px;
+    color: #00c6ff;
+    font-weight: bold;
+    background: #00c6ff;
+    padding: 8px 18px;
+    border-radius: 20px;
+    box-shadow: 0 2px 8px rgba(0,123,255,0.10);
+    display: inline-block;
+    transition: background 0.2s, color 0.2s;
+    margin: 0;
+}
+
+.container-p p:hover {
+    background: linear-gradient(90deg, #609DF9 60%, #4A90E2 100%);
+    cursor: pointer;
+}
+
+/* Remove estilos antigos do botão cadastrar */
+.container-login .container-p {
+    position: static;
+    margin: 0;
+    justify-content: flex-end;
+    width: auto;
+    display: block;
 }
 
 .container-login{
@@ -478,18 +521,6 @@ section.main-login {
 .container-login input[type="submit"]:hover {
     background: linear-gradient(90deg, #4A90E2 60%, #609DF9 100%);
     box-shadow: 0 4px 16px rgba(96,157,249,0.13);
-}
-
-.container-p{
-    display: flex;
-    margin-top: 40px;
-    justify-content: flex-end;
-    width: 100%;
-}
-
-.container-p p{
-    font-size: 15px;
-    color: #747474;
 }
 
 .container-login p.kanban-title{
