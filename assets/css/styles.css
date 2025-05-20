@@ -1,6 +1,7 @@
 /*=============== 
  Reset
 ===============*/
+/* Reset de estilos padrão e definição de fonte global */
 * {
     font-family: "Open Sans", sans-serif;
     box-sizing: border-box;
@@ -13,15 +14,17 @@
     border: none;
 }
 
+/* Define altura total para body e html */
 body, html {
     height: 100%;
 }
 
-body {
-    /* Remova ou comente esta linha para não aplicar o fundo globalmente */
-    /* background: url('../img/esp3.png') no-repeat center center/cover; */
-}
+/* Remove fundo global, agora aplicado apenas na tela de login */
+/* body {
+    background: url('../img/esp3.png') no-repeat center center/cover;
+} */
 
+/* Container principal da aplicação */
 div.container {
     height: 100vh;
     width: 100%;
@@ -31,6 +34,7 @@ div.container {
 /*=============== 
  Sidebar
 ===============*/
+/* Barra lateral fixa à esquerda */
 aside.sidebar {
     width: 250px;
     height: 100vh;
@@ -38,17 +42,19 @@ aside.sidebar {
     position: fixed;
 }
 
-/* header */
+/* Nome do usuário no topo da sidebar */
 p.user-name {
     margin-left: 10px;
 }
 
+/* Cabeçalho da sidebar */
 .aside-header {
     min-height: 80px;
     border-bottom: 1px solid #E6E6E6;
     padding-top: 15px;
 }
 
+/* Container do título e ícone da sidebar */
 .aside-title-container {
     display: flex;
     justify-content: space-between;
@@ -56,6 +62,7 @@ p.user-name {
     padding: 5px 15px;
 }
 
+/* Ícone do título da sidebar */
 .aside-title-container i {
     background-color: #609DF9;
     padding: 10px;
@@ -64,6 +71,7 @@ p.user-name {
     color: #fff;
 }
 
+/* Formulário para novo projeto na sidebar */
 .new-project-form {
     width: 90%;
     height: 50px;
@@ -104,18 +112,20 @@ p.user-name {
     color: #fff;
 }
 
-/* body */
+/* Item de projeto selecionado na sidebar */
 li.current {
     background-color: #E6E6E6;
     border-right: 3px solid #609DF9;
 }
 
+/* Corpo da sidebar com rolagem */
 .aside-body {
     height: calc(100vh - 120px);
     padding-top: 25px;
     overflow-y: auto;
 }
 
+/* Estilização da barra de rolagem */
 ::-webkit-scrollbar {
     width: 5px;
 }
@@ -125,6 +135,7 @@ li.current {
     border-radius: 3px;
 }
 
+/* Item de projeto na sidebar */
 .project-item {
     cursor: pointer;
     transition: .3s;
@@ -145,7 +156,7 @@ li.current {
     color: #BABABA;
 }
 
-/* footer */
+/* Rodapé da sidebar */
 .aside-footer{
     height: 40px;
     display: flex;
@@ -157,13 +168,11 @@ li.current {
     font-weight: bold;
 }
 
-
-
 /*=============== 
  Main
 ===============*/
 
-/* header */
+/* Área principal da aplicação */
 section.main-content {
     width: calc(100vw - 250px);
     margin-left: 250px;
@@ -171,7 +180,7 @@ section.main-content {
     background: linear-gradient(to bottom right, #f0f4ff, #ffffff);
 }
 
-
+/* Cabeçalho da área principal */
 header.main-header {
     min-height: 100px;
     background-color: #fff;
@@ -185,6 +194,7 @@ header.main-header {
     border-bottom: 3px solid #609DF9;
 }
 
+/* Ícone de menu para mobile */
 .main-header i.fa-bars {
     font-size: 20px;
     margin-top: 10px;
@@ -192,6 +202,7 @@ header.main-header {
     display: none;
 }
 
+/* Informações do projeto no topo */
 .project-info {
     display: flex;
     flex-wrap: wrap;
@@ -199,6 +210,7 @@ header.main-header {
     padding: 10px 25px;
 }
 
+/* Botões de ação do projeto */
 .btn-container i{
     margin-right: 15px;
     cursor: pointer;
@@ -220,24 +232,25 @@ header.main-header {
     background: linear-gradient(90deg, #4A90E2, #609DF9);
 }
 
-
-/* body */
+/* Container do workspace */
 main.workspace-container {
     padding: 20px;
 }
 
+/* Container dos cards do kanban */
 section.cards-container{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
 }
 
-/* card */
+/* Card do kanban */
 .card {
     width: 300px;
     margin: 20px;
 }
 
+/* Cabeçalho do card */
 .card-header {
     display: flex;
     justify-content: space-between;
@@ -256,11 +269,13 @@ section.cards-container{
     margin-right: 10px;
 }
 
+/* Corpo do card */
 .card-body{
     background-color: #fff;
     padding: 10px;
 }
 
+/* Item de tarefa do card */
 .card-item{
     border-bottom: 1px solid #E6E6E6;
     padding: 10px 0;
@@ -270,6 +285,7 @@ section.cards-container{
     border-bottom: none;
 }
 
+/* Aparência aprimorada do item de tarefa */
 .card-item{
     background-color: #ffffff;
     border: 1px solid #e0e0e0;
@@ -295,6 +311,7 @@ section.cards-container{
     color: #BABABA;
 }
 
+/* Controles do card */
 .card-controls {
     margin-top: 10px;
     display: flex;
@@ -305,6 +322,7 @@ section.cards-container{
     margin-right: 15px;
 }
 
+/* Menu oculto para overlay */
 div.hidden-menu{
     width: 100vw;
     height: 100vh;
@@ -317,8 +335,10 @@ div.hidden-menu{
     display: none;
 }
 
-
-/* botao de edição do título do projeto */
+/*=============== 
+ Edição de Projeto
+===============*/
+/* Inputs e botões para edição do título do projeto */
 .editProjectInput, .editProjectButton{
     margin-top: 10px;
     height: 40px;
@@ -343,6 +363,11 @@ div.hidden-menu{
     border-radius: 0 5px 5px 0;
     cursor: pointer;
 }
+
+/*=============== 
+ Cadastro de Tarefas
+===============*/
+/* Formulário de cadastro de tarefas */
 .task-register form{
     display: flex;
     flex-direction: column;
@@ -378,7 +403,10 @@ div.hidden-menu{
     cursor: pointer;
 }
 
-/* formulário de edição de tarefa */
+/*=============== 
+ Edição de Tarefas
+===============*/
+/* Formulário de edição de tarefa */
 .taskedit-form {
     width: 100%;
 }
@@ -411,6 +439,7 @@ div.hidden-menu{
 /*=============== 
  Login
 ===============*/
+/* Tela de login com fundo de imagem e gradiente */
 section.main-login {
     background: url('../img/esp3.png') no-repeat center center/cover, linear-gradient(135deg, #609DF9 0%, #4A90E2 100%);
     background-size: cover;
@@ -423,7 +452,7 @@ section.main-login {
     position: relative; /* Necessário para posicionamento absoluto do botão */
 }
 
-/* Botão cadastrar no topo direito */
+/* Botão cadastrar no topo direito da tela de login */
 .container-p {
     position: absolute;
     top: 32px;
@@ -456,7 +485,7 @@ section.main-login {
     cursor: pointer;
 }
 
-/* Remove estilos antigos do botão cadastrar */
+/* Remove estilos antigos do botão cadastrar dentro do container-login */
 .container-login .container-p {
     position: static;
     margin: 0;
@@ -465,6 +494,7 @@ section.main-login {
     display: block;
 }
 
+/* Container do formulário de login */
 .container-login{
     background-color: #fff;
     width: 370px;
@@ -478,6 +508,7 @@ section.main-login {
     transition: box-shadow 0.3s;
 }
 
+/* Inputs do formulário de login */
 .container-login input[type="email"], 
 .container-login input[type="password"], 
 .container-login input[type="text"]{
@@ -492,17 +523,20 @@ section.main-login {
     transition: border-color 0.2s, box-shadow 0.2s;
 }
 
+/* Foco nos inputs do login */
 .container-login input:focus {
     border-color: #609DF9;
     box-shadow: 0 0 0 2px #e3edfc;
     outline: none;
 }
 
+/* Placeholder dos inputs do login */
 .container-login input::placeholder{
     color: #BABABA;
     font-size: 14px;
 }
 
+/* Botão de submit do login */
 .container-login input[type="submit"]{
     color: #fff;
     background: linear-gradient(90deg, #609DF9 60%, #4A90E2 100%);
@@ -523,6 +557,7 @@ section.main-login {
     box-shadow: 0 4px 16px rgba(96,157,249,0.13);
 }
 
+/* Título do formulário de login */
 .container-login p.kanban-title{
     font-size: 38px;
     color: #609DF9;
@@ -533,6 +568,7 @@ section.main-login {
     text-shadow: 0 2px 8px rgba(96,157,249,0.08);
 }
 
+/* Formulário de login alinhado em coluna */
 .container-login form{
     display: flex;
     flex-direction: column;
@@ -540,6 +576,7 @@ section.main-login {
     width: 100%;
 }
 
+/* Span e label do formulário de login */
 .container-login span{
     width: 100%;
     margin-top: 10px;
@@ -567,6 +604,7 @@ section.main-login {
 /*=============== 
  Mobile
 ===============*/
+/* Sidebar mobile */
 @media screen and (max-width: 890px) {
     aside.sidebar {
         z-index: 10;
@@ -586,6 +624,7 @@ section.main-login {
     }
 }
 
+/* Responsividade para informações do projeto */
 @media screen and (max-width: 630px) {
     .project-info {
         flex-direction: column;
@@ -596,6 +635,7 @@ section.main-login {
     }
 }
 
+/* Responsividade para formulário de tarefas */
 @media screen and (max-width: 412px) {
     div.task-register{
         margin: -10;
@@ -608,6 +648,7 @@ section.main-login {
 }
 
 /* Additional CSS */
+/* Layout alternativo para login (caso necessário) */
 .main-login {
     width: 100vw;
     height: 100vh;
