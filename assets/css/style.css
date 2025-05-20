@@ -1,0 +1,36 @@
+/* ...existing code... */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #8e2de2, #4a00e0);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Cores dos cards por status */
+.card-status-fazer {
+    background-color: #e3f2fd !important;
+    border-left: 5px solid #2196f3;
+}
+
+.card-status-andamento {
+    background-color: #fffde7 !important;
+    border-left: 5px solid #ffeb3b;
+}
+
+.card-status-concluido {
+    background-color: #e8f5e9 !important;
+    border-left: 5px solid #4caf50;
+}
+
+/* ...existing code... */

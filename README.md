@@ -1,5 +1,10 @@
-# Kanban
-Aplicação web de gerenciamento de tarefas baseado na metodologia ágil Kanban. Desenvolvido com PHP, MySQL e JavaScript
+# Excellis
+Aplicação web de gerenciamento de tarefas baseado na metodologia ágil Kanban. Desenvolvido com PHP, MySQL e JavaScript;
+
+É um nome poderoso, elegante e cheio de significado — transmite imediatamente:
+
+Excelência com propósito. Excelência para Deus.
+(💡 Inspirado em Colossenses 3:23 — “façam tudo como para o Senhor”)
 
 ## Features
 ### Usuário
@@ -23,7 +28,7 @@ Aplicação web de gerenciamento de tarefas baseado na metodologia ágil Kanban.
 
 1. Clone este repositório:
    ```
-   git clone https://github.com/seu-usuario/kanban.git
+   git clone https://github.com/del-iron/kanban.git
    ```
 2. Importe o banco de dados MySQL usando o arquivo `kanban.sql` (caso exista).
 3. Configure o acesso ao banco de dados no arquivo de conexão (`config.php` ou similar).
@@ -48,6 +53,18 @@ Aplicação web de gerenciamento de tarefas baseado na metodologia ágil Kanban.
 - Font Awesome
 - Google Fonts (Open Sans)
 
+## Melhorias Visuais (UI)
+
+### Cores com Significado
+
+Os cards de tarefas possuem cores distintas para facilitar o reconhecimento do status:
+
+- **Fazer:** azul claro
+- **Em andamento:** amarelo
+- **Concluído:** verde
+
+Isso proporciona identificação visual imediata do progresso das tarefas.
+
 ## Telas
 
 - Login
@@ -61,6 +78,6 @@ Este projeto é open-source e está sob a licença MIT.
 
 ## Autor
 
-Desenvolvido por [Seu Nome](https://github.com/seu-usuario)
+Desenvolvido por [Seu Nome](https://github.com/del-iron)
 
 
