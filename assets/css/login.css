@@ -145,6 +145,14 @@ body {
   pointer-events: none;
 }
 
+.input-icon svg {
+  width: 20px;
+  height: 20px;
+  stroke: #aaa;
+  display: block;
+}
+
+
 .login-content input[type="email"],
 .login-content input[type="password"] {
   width: 100%;
