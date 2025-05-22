@@ -185,6 +185,13 @@ body {
   transform: translateY(-1px);
 }
 
+.logo-gov {
+  height: 45px;
+  width: auto;
+  filter: brightness(0) invert(1);
+  display: block;
+}
+
 @media screen and (max-width: 768px) {
   .container-box {
     flex-direction: column;
