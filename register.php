@@ -24,18 +24,18 @@
           <img src="assets/img/adese_logo_branco.png" alt="Logo Adese">
         </div>
         <h2>Crie sua conta</h2>
-        <form>
+        <form action="App/controller/register.controller.php" method="post">
           <div class="form-group">
             <label for="username">Usuário</label>
-            <input type="text" id="username" placeholder="Nome de usuário" required>
+            <input type="text" id="username" name="username" placeholder="Nome de usuário" required>
           </div>
           <div class="form-group">
             <label for="email">E-mail</label>
-            <input type="email" id="email" placeholder="Digite seu e-mail" required>
+            <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required>
           </div>
           <div class="form-group">
             <label for="password">Senha</label>
-            <input type="password" id="password" placeholder="Crie uma senha" required>
+            <input type="password" id="password" name="password" placeholder="Crie uma senha" required>
           </div>
           <button type="submit">Registrar</button>
         </form>
