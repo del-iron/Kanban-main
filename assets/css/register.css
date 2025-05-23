@@ -1,3 +1,4 @@
+/* ===== Reset e Fonte ===== */
 * {
   margin: 0;
   padding: 0;
@@ -5,15 +6,29 @@
   font-family: 'Segoe UI', sans-serif;
 }
 
+/* ===== Fundo e Centralização ===== */
 body {
   min-height: 100vh;
-  background: linear-gradient(135deg, #0b3f2c, #1c7561);
+  background: url('../img/surreal_fundo.png') no-repeat center center fixed;
+  background-size: cover;
   display: flex;
   justify-content: center;
   align-items: center;
+  font-family: 'Segoe UI', sans-serif;
+  position: relative;
   padding: 20px;
 }
 
+/* Sobreposição escura */
+body::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 40, 30, 0.45); /* menos escuro, mais vivo */
+  z-index: 0;
+}
+
+/* ===== Container Principal do Cadastro ===== */
 .main-register-container {
   display: flex;
   max-width: 1000px;
@@ -25,17 +40,21 @@ body {
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   gap: 40px; /* separação entre imagem e formulário */
+  position: relative;
+  z-index: 1;
 }
 
+/* ===== Container que o Formulário está dentro ===== */
 .form-side {
   flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 40px;
-  background-color: rgba(0, 0, 0, 0.5);
+  background: none; /* totalmente transparente */
 }
 
+/* ===== Lado da Imagem ===== */
 .image-side {
   flex: 1;
   background: none; /* totalmente transparente */
@@ -45,20 +64,14 @@ body {
   padding: 20px;
 }
 
+/* ===== Imagem de Cadastro ===== */
 .image-side img {
   width: 100%;
   max-width: 400px;
   height: auto;
 }
 
-/* 
-.img-cadastramento {
-  max-width: 500px;
-  width: 100%;
-  height: auto;
-  display: block;
-}
-*/
+/* ===== Imagem de Cadastro (Classe extra) ===== */
 .image-side img,
 .img-cadastramento {
   width: 100%;
@@ -69,13 +82,31 @@ body {
   border-radius: 8px;
 }
 
+/* ===== Box do Formulário - A parte escura dos Campos de login e senha ===== */
 .register-box {
   width: 100%;
   max-width: 400px;
   color: white;
   text-align: center;
+  background: #1e1e1e;
+  border-radius: 18px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.45), 0 1.5px 8px rgba(29,185,160,0.10);
+  position: relative;
+  z-index: 10;
+  padding: 32px 24px;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1.5px solid rgba(29,185,160,0.13);
+  margin: 0 auto;
+  transition: transform 0.25s cubic-bezier(.4,1.4,.6,1), box-shadow 0.25s;
 }
 
+.register-box:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 16px 48px 0 rgba(29,185,160,0.18), 0 8px 32px 0 rgba(0,0,0,0.18);
+}
+
+/* ===== Logo (Oculta) ===== */
 .logo img {
   width: 180px;
   height: auto;
@@ -83,12 +114,28 @@ body {
   display: none; /*DESABILITADA A LOGO*/
 }
 
+.logo-esp {
+  height: 45px;
+  width: auto;
+  filter: brightness(0) invert(1);
+  display: block;
+}
+
+.logo-adese {
+  height: 28px;
+  width: auto;
+  filter: brightness(0) invert(1);
+  display: block;
+}
+
+/* ===== Título do Cadastro ===== */
 h2 {
   margin-bottom: 25px;
   font-weight: 400;
   font-size: 35px;
 }
 
+/* ===== Grupo de Inputs ===== */
 .form-group {
   margin-bottom: 18px;
   text-align: left;
@@ -101,6 +148,7 @@ h2 {
   margin-bottom: 6px;
 }
 
+/* ===== Inputs do Cadastro ===== */
 .register-box input {
   width: 100%;
   padding: 6px 8px;
@@ -121,6 +169,7 @@ h2 {
   border-bottom: 1px solid #1db9a0;
 }
 
+/* ===== Botão de Cadastro ===== */
 .register-box button {
   width: 100%;
   padding: 12px;
@@ -139,6 +188,7 @@ h2 {
   opacity: 0.95;
 }
 
+/* ===== Rodapé do Formulário ===== */
 .footer {
   margin-top: 25px;
   font-size: 14px;
@@ -154,7 +204,7 @@ h2 {
   text-decoration: underline;
 }
 
-/* Responsividade */
+/* ===== Responsividade ===== */
 @media (max-width: 768px) {
   .main-register-container {
     flex-direction: column;
@@ -167,4 +217,21 @@ h2 {
   .form-side {
     border-radius: 20px;
   }
+}
+
+/* ===== Barra de Rodapé Personalizada ===== */
+.footer-bar-custom {
+  width: 100vw;
+  background: rgba(255,255,255,0.10); /* igual ao login */
+  color: #fff;
+  text-align: center;
+  font-size: 16px;
+  padding: 18px 0 14px 0;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  z-index: 110;
+  box-shadow: 0 -2px 12px rgba(0,0,0,0.08);
+  letter-spacing: 0.5px;
+  backdrop-filter: blur(2px);
 }

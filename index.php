@@ -12,9 +12,10 @@
   <title>Gerenciador de Tarefas</title>
 </head>
 <body>
+  <div class="head-bar"></div>
   <div style="position: fixed; top: 16px; left: 24px; z-index: 101; display: flex; align-items: center; gap: 16px;">
-    <img src="assets/img/logo-esp.png" alt="Logo Governo" class="logo-gov">
-    <img src="assets/img/adese_logo_.png" alt="Logo Adese" class="logo-gov">
+    <img src="assets/img/logo-esp.png" alt="Logo Esp" class="logo-esp">
+    <img src="assets/img/adese_logo_.png" alt="Logo Adese" class="logo-adese">
   </div>
   <div class="cadastrar-topo">
     <span class="pergunta">Ainda não tem conta?</span>
@@ -27,18 +28,12 @@
         <div class="login-content">
           <div class="login-logo">
             <div class="logo-icon">
-              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-                <line x1="9" y1="9" x2="15" y2="9"></line>
-                <line x1="9" y1="12" x2="15" y2="12"></line>
-                <line x1="9" y1="15" x2="13" y1="15"></line>
-                <path d="M17 8l2 2-2 2"></path>
-              </svg>
+             
             </div>
-            <div class="logo-text">Adese</div>
+            <div class="logo-text">Gerenciador de Tarefas</div>
           </div>
 
-          <h1 class="kanban-title">Gerenciador de Tarefas</h1>
+          <h1 class="Logar-Login">Login</h1>
 
           <form action="login.controller.php?action=login" method="post">
             <div class="input-group">
@@ -65,11 +60,10 @@
           </form>
         </div>
       </div>
-
-      <div class="right-box">
-        <img src="assets/img/lat_nova.png" alt="Ilustração de produtividade">
-      </div>
     </div>
   </section>
 </body>
+<footer class="footer-bar-custom">
+  <span>Todos os direitos reservados &copy; 2025 Adese/CEAD</span>
+</footer>
 </html>
