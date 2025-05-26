@@ -24,7 +24,7 @@
           <img src="assets/img/adese_logo_branco.png" alt="Logo Adese">
         </div>
         <h2>Crie sua conta</h2>
-        <form action="App/controller/register.controller.php" method="post">
+        <form method="post" action="register.controller.php">
           <div class="form-group">
             <label for="username">Usuário</label>
             <input type="text" id="username" name="username" placeholder="Nome de usuário" required>
