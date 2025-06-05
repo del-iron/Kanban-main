@@ -65,10 +65,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
           <img src="assets/img/adese_logo_branco.png" alt="Logo Adese">
         </div>
         <h2>Crie sua conta</h2>
+<<<<<<< HEAD
         <?php if (!empty($mensagem)): ?>
           <div style="color: red; margin-bottom: 10px;"><?php echo htmlspecialchars($mensagem); ?></div>
         <?php endif; ?>
         <form method="POST">
+=======
+        <form method="post" action="register.controller.php">
+>>>>>>> 1c22176f11a426447d41a07bc779d07d2c4d11b0
           <div class="form-group">
             <label for="username">Usuário</label>
             <input type="text" id="username" name="username" placeholder="Nome de usuário" required>
