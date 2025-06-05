@@ -1,4 +1,10 @@
 <?php require 'assets/layout/header.php'; ?>
+<head>
+    <!-- ...existing code... -->
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- ...existing code... -->
+</head>
 
 <section class="cards-container">
 
@@ -6,7 +12,7 @@
     <?php if(isset($tasks)){foreach($tasks as $taskVerify){
         if($taskVerify['task_status'] == 1){
     ?>
-        <div class="card">
+        <div class="card card-status-fazer">
             <div class="card-header">
                 <p><i class="fas fa-thumbtack"></i>Fazer </p>
                 <p><?php echo $count1 ?> / <?php echo $countTotal ?></p>
@@ -40,7 +46,7 @@
     <?php if(isset($tasks)){foreach($tasks as $taskVerify){
         if($taskVerify['task_status'] == 2){
     ?>
-        <div class="card">
+        <div class="card card-status-andamento">
             <div class="card-header">
                 <p><i class="fas fa-clock"></i></i>Em andamento </p>
                 <p><?php echo $count2 ?> / <?php echo $countTotal ?></p>
@@ -70,7 +76,7 @@
     <?php if(isset($tasks)){foreach($tasks as $taskVerify){
         if($taskVerify['task_status'] == 3){
     ?>
-    <div class="card">
+    <div class="card card-status-concluido">
         <div class="card-header">
             <p><i class="fas fa-check-circle"></i>Concluído </p>
             <p><?php echo $count3 ?> / <?php echo $countTotal ?></p>

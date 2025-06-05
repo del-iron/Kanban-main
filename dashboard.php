@@ -25,6 +25,8 @@
             default:
                 $statusClass = '';
         }
+        // Debug: mostra status e classe aplicada (remova depois de testar)
+        // echo "<!-- status: $status | class: $statusClass -->";
         echo '<div class="card ' . $statusClass . '">';
         // ...existing code para conteúdo do card...
         echo '</div>';
