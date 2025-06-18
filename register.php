@@ -1,3 +1,44 @@
+<?php
+// Processamento do cadastro
+$mensagem = '';
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // Conexão com o banco
+    $conn = new mysqli('localhost', 'root', '', 'kanban');
+    if ($conn->connect_error) {
+        $mensagem = 'Erro de conexão com o banco de dados.';
+    } else {
+        $username = trim($_POST['username'] ?? '');
+        $email = trim($_POST['email'] ?? '');
+        $password = trim($_POST['password'] ?? '');
+
+        if ($username && $email && $password) {
+            // Verifica se o email já existe
+            $stmt = $conn->prepare("SELECT user_id FROM users WHERE user_email = ?");
+            $stmt->bind_param("s", $email);
+            $stmt->execute();
+            $stmt->store_result();
+            if ($stmt->num_rows > 0) {
+                $mensagem = 'E-mail já cadastrado.';
+            } else {
+                $stmt->close();
+                // Insere novo usuário
+                $hash = md5($password); // igual ao banco atual
+                $stmt = $conn->prepare("INSERT INTO users (user_name, user_email, user_pass) VALUES (?, ?, ?)");
+                $stmt->bind_param("sss", $username, $email, $hash);
+                if ($stmt->execute()) {
+                    $mensagem = 'Cadastro realizado com sucesso!';
+                } else {
+                    $mensagem = 'Erro ao cadastrar usuário.';
+                }
+                $stmt->close();
+            }
+            $conn->close();
+        } else {
+            $mensagem = 'Preencha todos os campos.';
+        }
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -24,18 +65,21 @@
           <img src="assets/img/adese_logo_branco.png" alt="Logo Adese">
         </div>
         <h2>Crie sua conta</h2>
-        <form>
+        <?php if (!empty($mensagem)): ?>
+          <div style="color: red; margin-bottom: 10px;"><?php echo htmlspecialchars($mensagem); ?></div>
+        <?php endif; ?>
+        <form method="POST">
           <div class="form-group">
             <label for="username">Usuário</label>
-            <input type="text" id="username" placeholder="Nome de usuário" required>
+            <input type="text" id="username" name="username" placeholder="Nome de usuário" required>
           </div>
           <div class="form-group">
             <label for="email">E-mail</label>
-            <input type="email" id="email" placeholder="Digite seu e-mail" required>
+            <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required>
           </div>
           <div class="form-group">
             <label for="password">Senha</label>
-            <input type="password" id="password" placeholder="Crie uma senha" required>
+            <input type="password" id="password" name="password" placeholder="Crie uma senha" required>
           </div>
           <button type="submit">Registrar</button>
         </form>

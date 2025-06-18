@@ -7,8 +7,11 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="assets/css/login.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
   <title>Gerenciador de Tarefas</title>
 </head>
 <body>
@@ -21,6 +24,14 @@
     <span class="pergunta">Ainda não tem conta?</span>
     <a href="register.php">Cadastrar</a>
   </div>
+
+  <!-- Adicione o header principal aqui -->
+  <header class="main-header">
+      <div class="header-left">
+          <i class="fa-bars"></i>
+          <h2 class="text-detail">Meu Projeto</h2>
+      </div>
+  </header>
 
   <section class="main-login">
     <div class="container-box" style="max-width: 1200px;">
