@@ -68,7 +68,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <?php if (!empty($mensagem)): ?>
           <div style="color: red; margin-bottom: 10px;"><?php echo htmlspecialchars($mensagem); ?></div>
         <?php endif; ?>
+<<<<<<< HEAD
         <form method="POST">
+=======
+        <form method="post" action="register.controller.php">
+>>>>>>> df3d9324c77062dd7ea0be63186edd5da04bcb65
           <div class="form-group">
             <label for="username">Usuário</label>
             <input type="text" id="username" name="username" placeholder="Nome de usuário" required>

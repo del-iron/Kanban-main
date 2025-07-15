@@ -211,6 +211,17 @@ ALTER TABLE `tasks`
   ADD CONSTRAINT `tasks_ibfk_1` FOREIGN KEY (`fk_project_id`) REFERENCES `projects` (`project_id`);
 COMMIT;
 
+-- Não há um número exato de registros que podem entrar no banco, 
+-- mas há limites práticos definidos pelo tipo de dado, espaço em disco e configuração do MySQL/MariaDB.
+
+-- Exemplos de limites:
+-- - INT (como project_id, user_id) suporta até ~2 bilhões de valores positivos (2^31-1).
+-- - O limite de linhas por tabela é muito alto (milhões ou bilhões), dependendo do hardware e configuração.
+-- - O limite real é o espaço disponível no disco e a performance do servidor.
+
+-- Para uso comum, não há um "número máximo" prático para registros de usuários, projetos ou tarefas.
+-- Se atingir o limite de espaço em disco, o banco não aceitará mais registros.
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

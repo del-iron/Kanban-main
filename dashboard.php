@@ -8,6 +8,11 @@
 <body>
     <!-- ...existing code... -->
     <?php
+    // Garante que $tarefas está definido como array, mesmo se não houver tarefas
+    if (!isset($tarefas) || !is_array($tarefas)) {
+        $tarefas = [];
+    }
+
     foreach ($tarefas as $tarefa) {
         $status = strtolower(trim($tarefa['status']));
         $statusClass = '';

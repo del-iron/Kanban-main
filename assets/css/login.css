@@ -6,7 +6,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: 'Segoe UI', sans-serif;
+  font-family: 'Roboto', 'Segoe UI', sans-serif;
   position: relative;
   padding: 20px;
 }
@@ -112,6 +112,7 @@ body::before {
   align-items: center;
   justify-content: center;
   transition: transform 0.18s cubic-bezier(.4,1.4,.6,1), box-shadow 0.18s, background 0.18s;
+  font-family: 'Roboto', 'Segoe UI', sans-serif;
 }
 
 .login-content:hover {
@@ -140,7 +141,7 @@ body::before {
   color: #1db9a0;
   font-weight: 700;
   margin-bottom: 24px;
-  font-family: 'Open Sans', 'Segoe UI', Arial, sans-serif;
+  font-family: 'Roboto', 'Open Sans', 'Segoe UI', Arial, sans-serif;
   letter-spacing: 1px;
   text-transform: uppercase;
 }
